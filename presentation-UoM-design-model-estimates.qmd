@@ -1,84 +1,414 @@
 ---
-title: Small Area Estimation (SAE)
-subtitle: A subtitle
+title:  Design- vs model-based inferences in survey research
+subtitle: Answering Social Research Questions with Statistical Modelling
 format: clean-revealjs
 html-math-method:
   method: mathjax
   url: "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
 author:
-  - name: Your Name
-    orcid: 0000-0000-0000-0000
-    email: alias@email.com
-    affiliations: Your Institution
-date: last-modified
+  - name: Adrien Allorant
+    email: adrien.allorant@soton.ac.uk
+    affiliations: University of Southampton
+date: 04/30/2025
 ---
 
-## Example slide
+## Population or process? (Lumley, 2010) {.smaller}
 
-### This is a subtitle
+::: columns
 
-Here we have some text that may run over several lines of the slide frame,
-depending on how long it is.
+::: {.column width="40%"}
 
-- first item 
-    - A sub item
+### Model-based inference
 
-Next, we'll brief review some theme-specific components.
+::: incremental
 
-- Note that _all_ of the standard Reveal.js
-[features](https://quarto.org/docs/presentations/revealjs/)
-can be used with this theme, even if we don't highlight them here.
+- Most of statistics is **model-based**
+  * Relies on specifying a probability model $p(.)$ for **the random process** $Y$
+  * $Y \sim_\text{iid} N(\mu, \sigma^2)$
 
-## Additional theme classes
+- Goals of **model-based inference**:
+  * **Explicative**: learn about the relationship between $Y$ and predictors $X$
+  * **Predictive**: predict $Y$ based on the estimated relationship between $Y$ and $X$
 
-### Some extra things you can do with the clean theme
+:::
 
-Special classes for emphasis
+:::
 
-- `.alert` class for default emphasis, e.g. [important note]{.alert}.
-- `.fg` class for custom colour, e.g. [important note]{.fg style="--col: #e64173"}.
-- `.bg` class for custom background, e.g. [important note]{.bg style="--col: #e64173"}.
+::: {.column width="60%"}
 
-Cross-references
+### Design-based inference
 
-- `.button` class provides a Beamer-like button, e.g.
-[[Summary]{.button}](#sec-summary)
+::: incremental
 
-## Want more?
+- Survey statistics is usually **design-based**
+  * The **population data values ($y$)** are unknown but **fixed**, not random 
+  * The selected **sample $S$ is random**; it depends on the random selection procedures (**sampling design**) of individuals from the population
+  
+- Goals of **design-based inference**:
+  * Estimate features of the population (**means, totals**)
+  * Findings are **NOT generalizable** to other populations
 
-### See our longer demo slides
+:::
 
-We've deliberarely kept this template lean, to get you up and running as fast as
-possible.
+:::
 
-We provide a separate
-[demo template](https://github.com/grantmcdermott/quarto-revealjs-clean-demo),
-with more examples for integrating code, tables, figures, etc.
+:::
 
-  - See the live demo slides
-  [here](https://grantmcdermott.com/quarto-revealjs-clean-demo/template.html).
+## Randomness of $S$: Simple example {#sec-example}
 
-## Summary {#sec-summary}
+::: incremental
 
-### A minimalist and elegant presentation theme
+- $N = 4$, possible responses $y_1, y_2, y_3, y_4$. 
 
-The Quarto reveal.js clean theme aims to be a minimalist and elegant presention
-theme. Here are some options to get you started:
+- There are 6 possible samples of size $n=2$: $\{y_1, y_2\}$, $\{y_1, y_3\}$, $\{y_1, y_4\}$, $\{y_2, y_3\}$, $\{y_2, y_4\}$, $\{y_3, y_4\}$
 
-Add the theme to an existing project.
 
-```{.bash}
-quarto install extension grantmcdermott/quarto-revealjs-clean
-```
+- The sample space of $S$ is:
 
-... or, create a new project using this slide deck as a lean template.
+:::
 
-```{.bash}
-quarto use template grantmcdermott/quarto-revealjs-clean
-```
+. . .
 
-... or, create a new project using the demo slide deck as a full template.
+$$
+S(\Omega) = \left(\{1, 2\}, \{1, 3\}, \{1, 4\}, \{2, 3\}, \{2, 4\}, \{3, 4\}\right)
+$$
 
-```{.bash}
-quarto use template grantmcdermott/quarto-revealjs-clean-demo
-```
+. . .
+
+**Note**:
+
+::: incremental
+
+- If **Simple Random Sampling**, each sample $s \in S$ has probability $\frac{1}{6}$
+
+- Each individual, $k \in S$ has probability $\pi_k = \frac{1}{2}$ of being selected
+
+:::
+
+. . .
+
+
+**Simple Random Sampling** is one type of [probability samples](#prob-sample)
+
+
+
+## Real-data example: SPA Senegal 2017
+
+::: columns
+::: {.column width="50%"}
+
+::: incremental
+
+- The Service Provision Assessment (SPA) is a health facility survey
+  * It uses **stratified sampling**
+  * Strata = region x facility type x managing authority
+
+- In each stratum, health facilities are selected using **simple random sampling**
+
+- SPA provides **design weights** associated with each facility in the sample
+
+:::
+
+:::
+
+::: {.column width="50%"}
+
+![Health facilities location in SPA 2017](img/SEN_sampled_facilities_2017.png){width="110%"}
+
+:::
+:::
+
+
+## Why acknowledge the design?
+
+::: incremental
+
+- We want to know the proportion ($p$) of health facilities with electricity
+  * Access to electricity is much more common in hospitals
+  * Hospitals are typically **oversampled** in SPA
+  * If this is ignored this, we will get a **biased estimate**
+
+- **Simple numerical example** : 
+  * Population: 200 hospitals, 800 clinics
+  * Sample: 50 hospitals, 50 clinics
+  
+- Suppose **true** access to electricity is $p_H = 90%$ and $p_C = 80%$
+  * On average, we will observe $50*90\% = 45$ hospitals with electricity and $50*80\% = 40$ clinics with electricity
+- Simple (naive) estimate: $\widehat{p} = \frac{45 + 40}{100} = 85\%$
+
+:::
+
+## Why acknowledge the design?
+
+::: incremental
+
+- Simple (naive) estimate: $\widehat{p} = \frac{45 + 40}{100} = 85\%$
+  * Ignores that hospitals are oversampled!
+  * Weights: hospitals $\frac{200}{50}=4$, clinics $\frac{800}{50}=16$
+  
+- Weighted (correct) estimate: 
+  $$ \widehat{p} =\frac{4\cdot45 + 16\cdot40}{4\cdot50 + 16\cdot50}=82\% < 85\% $$ 
+
+:::
+
+. . .
+
+**Fundamental idea of design-based inference**: weight each unit $k$ based on the number of units they represent in the population
+
+
+## Design‑based inference
+
+::: incremental
+
+- $y$ values are **fixed**; the **particular sample** of units selected ($S$) is **random**
+
+- For each unit $k \in S$, define its **design weights**: $w_k = \frac{1}{\pi_k}$
+  * For SRS, $w_k = \frac{1}{n/N} = \frac{N}{n}$
+  * For stratified random sampling, in each stratum $h$, $w_{hk} = \frac{1}{n_h/N_h} = \frac{N_h}{n_h}$
+
+- The classic estimator for the **unobserved population mean** ($\overline{y}_U$) is the **weighted mean** (Horvitz-Thompson):
+:::
+
+. . .
+
+$$
+\widehat{\overline y}^{HT}
+= \frac{\sum_{k\in S}w_k y_k}{\sum_{k\in S}w_k}
+$$
+
+
+
+## Properties of the weighted estimator {#sec-prop}
+
+**Unbiasedness under SRS**
+
+$$
+\widehat{\overline y}^{HT}
+= \frac{\sum_{k\in S}w_k\,y_k}{\sum_{k\in S}w_k}
+$$
+
+::: {.fragment}
+$$
+= \frac{\sum_{k\in S}\frac{N}{n}\,y_k}{\sum_{k\in S}\frac{N}{n}}
+= \frac{\sum_{k\in S} y_k}{n}
+= \underbrace{\overline{y}}_{\text{the sample mean!}}
+$$
+:::
+
+::: {.fragment}
+$$
+E\bigl[\widehat{\overline y}^{HT}\bigr]
+= E[\overline{y}]
+= \overline{y}_U
+\quad\square
+$$
+:::
+
+
+. . .
+
+Proof of unbiasedness for [stratified and cluster random sampling here](#sec-unbiasedness)
+
+## Properties of the weighted estimator
+
+**Variance**
+$$
+V(\overline{y}) 
+= \left(1 - \frac{n}{N}\right)  \frac{S^2}{n}
+$$
+
+::: {.fragment}
+$$
+\text{where } S^2 = \frac{1}{N-1}
+  \sum_{k=1}^N (y_k - \overline{y}_U)^2
+$$
+:::
+
+. . .
+
+**Asymptotic Confidence Interval**
+
+For $n$, $N$, and $N-n$ "large enough", a 95% asymptotic CI for $\overline{y}_U$ is:
+
+$$
+\begin{split}
+\overline{y} \pm 1.96 \sqrt{1 - \frac{n}{N}} \times \frac{s}{\sqrt{n}}
+\end{split}
+$$
+
+## Model-based Inference:
+
+::: incremental
+
+- In the model-based view, $Y_1, \dots, Y_N$ are iid from a hypothetical distribution. For instance, $Y_{k, k = 1 \dots n} \sim N(\mu, \sigma^2)$
+
+- As an estimator of $\mu$, we may take is the sample mean:
+
+:::
+
+. . .
+
+$$
+\widehat{\mu} = \frac{1}{n} \sum_{k=1}^{n} Y_k
+$$
+
+. . .
+
+**Unbiasedness**
+
+$$
+\begin{split}
+E[\widehat{\mu}] &= E[\frac{1}{n} \sum_{k=1}^{n} Y_k]
+ = \frac{1}{n} \sum_{k=1}^{n} \overbrace{E[Y_k]}^{= \mu} = \frac{1}{n} \sum_{k=1}^{n} \mu = \mu
+\end{split}
+$$
+
+## Model-based Inference:
+
+**Variance**
+
+$$
+V\!\bigl[\widehat{\mu}\bigr]
+= V\!\Bigl[\tfrac{1}{n}\sum_{k=1}^{n}Y_k\Bigr]
+\underbrace{=}_{\text{iid}}
+\tfrac{1}{n^2}\sum_{k=1}^{n}\underbrace{V[Y_k]}_{=\sigma^2}
+$$
+
+::: {.fragment}
+$$
+= \tfrac{1}{n^2}\sum_{k=1}^{n}\sigma^2
+$$
+:::
+
+::: {.fragment}
+$$
+= \tfrac{\sigma^2}{n}
+$$
+:::
+
+
+
+## Model-based Inference: variance
+
+- The variance, $\sigma^2$ is unknown, so in practice we estimate it using the unbiased estimator:
+
+$$
+s^2 = \frac{1}{n-1} \sum_{k=1}^{n}(y_k - \widehat{\mu})^2
+$$
+
+. . .
+
+- A *95% asymptotic confidence interval* is
+
+$$
+\widehat{\mu} \pm 1.96 \frac{s}{\sqrt{n}}
+$$
+
+## Take-away
+
+::: incremental
+
+- Survey data can be analysed using **design- or model‑based inference**.
+- Let $y_k$ be the value of $y$ for unit $k$, for $k \in S$ (the sampled set).
+
+:::
+
+. . .
+
+::: columns
+
+::: {.column width="50%"}
+
+### Design‑based inference
+
+::: incremental
+
+- Sample labels $S$ are **random**
+
+- Responses $y_k$ are **fixed**
+
+- **Advantage**: Minimal model assumptions
+
+- **Drawback**: Inefficient for small $n$
+
+:::
+:::
+
+::: {.column width="50%"}
+
+### Model‑based inference
+
+::: incremental
+
+- Sampled units are **fixed**
+
+- Responses $Y_k$ are **random**
+
+- **Advantage**: Handles small $n$ & some non‑probability data
+
+- **Drawback**: Biased if the model is misspecified
+
+:::
+:::
+:::
+
+# Appendix
+
+## Appendix: Types of probability samples {#prob-sample .smaller} 
+
+::: incremental
+
+- **Simple random sampling** (SRS)
+
+  1. Take a SRS of size $n$ from total population $N$
+  2. Each unit $k$ has probability $\pi_{k} = \frac{n}{N}$ to be selected
+
+
+- **Stratified sampling**
+
+  1. Define strata $h = 1, \dots, H$, with known total populations $N_1, \dots, N_H$ with $N_1 + \dots + N_H = N$  
+  2. Take a SRS of size $n_h$ from each stratum $h$
+  3. Then, unit $k$ in stratum $h$ has sampling probability: $\pi_{hk} = \frac{n_h}{N_h}$
+
+- **Cluster sampling**
+
+  1. Group each unit $k$ into larger units called **clusters** or **primary sampling units**
+  2. Take a SRS of $m$ **clusters** from $M$ clusters: **all units** within a sampled cluster will be selected
+  3. Then unit $k$ in cluster $m$ has sampling probability: $\pi_{mk} = \frac{m}{M}$
+  
+[Back](#sec-example)
+
+:::
+
+## Appendix: Unbiasedness {#sec-unbiasedness .smaller} 
+
+In many designs, $\sum_{k \in S} w_k = N$, such that:
+
+$$
+\widehat{\overline y}^{HT} = \frac{1}{N} \sum_{k \in S} w_k y_k
+$$
+
+. . .
+
+- An elegant approach is to introduce an indicator of selection in the sample  $I_k \sim \mathrm{Bernoulli}(\pi_k)$:
+$$
+E\bigl[\widehat{\overline y}^{HT}\bigr]
+= \underbrace{E\Bigl[\tfrac{1}{N}\sum_{k \in S} w_k y_k\Bigr]}_{S\text{ is random here}}
+= \underbrace{E\Bigl[\tfrac{1}{N}\sum_{k=1}^N I_k w_k y_k\Bigr]}_{I_k\text{ is random here}}
+$$
+
+::: {.fragment}
+$$
+= \frac{1}{N}\sum_{k=1}^N E[I_k]\,w_k\,y_k
+= \frac{1}{N}\sum_{k=1}^N \pi_k \frac{1}{\pi_k} y_k
+$$
+:::
+
+::: {.fragment}
+$$
+=\frac{1}{N}\sum_{k=1}^N y_k
+= \overline{y}_U\quad\square
+$$
+:::
+
+[Back](#sec-prop)
