@@ -14,111 +14,113 @@ date: 04/30/2025
 
 # Proposed Research Program {background-color="#40666e"}
 
-Building on my previous research and work experiences in population health, social statistics, and demography, my proposed research program is to:
+Building on my previous research in population health, social statistics, and demography, my proposed research program is to:
+
+::: incremental
 
 1. Develop statistical methods to **advance precision public health**
 2. Advance models and metrics to quantify **health inequalities**
 3. Address key challenges in the **measurement of demographic processes**
 
+:::
+
 # **Aim 1**: Statistical Methods for Precision Public Health  {background-color="#40666e"}
 
 ## Subnational variations in healthcare quality {#sec-aim1 .smaller}
 
-. . .
-
-**Background**
+### Previous work
 
 ::: incremental
 
-- 5 million of people die from poor‑quality care every year worldwide
+- **Background**: 5 million of people die from poor‑quality care every year worldwide
+  * Variations in access to quality healthcare quality are ~ between and within countries
 
-- Variations in access to quality healthcare quality are ~ between and within countries
-:::
+- **Health Facility Surveys**: In low-resource settings, health information systems lacking or incomplete
+  * Information about access and quality of care comes from surveys
 
-. . .
-
-**Health Facility Surveys**
-  
-::: incremental
-
-- In many low resource settings, routine health information systems are lacking or incomplete
-
-- Information about access and quality of care comes from surveys
-
-:::
-
-. . .
-
-**Modelling Facility Readiness**
-
-::: incremental
-
-- Facility surveys can be inconsistent and are not powered to produce estimates at subnational level
-- Hierarchical models can (i) account for differences between surveys using different design between, and (ii) use space-time correlation and covariates to produce estimates at subnational level
+- **Modelling Facility Readiness**: Facility surveys can be inconsistent and not powered to produce estimates at subnational level
+  * Hierarchical models (i) account for differences between designs, (ii) use space-time correlation and covariates to increase precision at subnational level
 
 - I developed a spatio-temporal model using a [two-step estimation process](#sae-facility) (Allorant, 2023, *Nat. Comm.*)
-  * IHME Health Systems team is implementing it for modelling ANC readiness in 6 countries
 
+:::
+
+### Future work 
+
+::: incremental
+
+- IHME Health Systems team is implementing it for modelling ANC readiness in 6 countries
+
+- Developing a [unit-level model](#unit-level), where quality metrics are modelled at the facility-level
+
+:::
+
+## Optimize Data Integration & Enhance HIV Care {.smaller}
+
+::: columns
+::: {.column width="50%"}
+
+::: incremental
+
+- **Survey data** provide snapshot of:
+  - HIV prevalence in a sampled population
+  - ART coverage among HIV-positive
+
+- **Challenges**:
+  - Surveys are typically conducted every few years
+  - Sample sizes may be small at sub-national level
+  - HIV Surveys (PHIA) were funded by USAID...terminated
+
+:::
+:::
+
+::: {.column width="40%"}
+
+![Allorant, 2025, JIAS Under Review](img/key_indicators_ad0.png){width="150%"}
+
+::: incremental
+
+- **Programmatic data**:
+  - Tracked continuously, aggregated quarterly
+  - Capture numbers of **new HIV diagnoses**, **people currently initiating/on treatment**
+
+:::
+:::
 :::
 
 . . .
 
-**Future work**: Developing a [unit-level model](#unit-level), where quality metrics are modelled at the facility-level
+- **Rationale**: **Combining** these data sources can yield **more robust** estimates and reduce uncertainty
 
-## Optimizing Data Integration to Enhance HIV Care
+## Small Area Estimation Models
 
-::: incremental
-
-- **Survey data** (e.g., DHS, PHIA) provide snapshots of:
-  - HIV prevalence in a sampled population
-  - ART coverage among those who test HIV-positive
-- **Challenges**:
-  - Surveys are typically conducted every few years (infrequent).
-  - Sample sizes may be small at sub-national level → **higher uncertainty** when disaggregating.
-  - HIV Surveys (PHIA) were funded by USAID...
-
-- **Programmatic data** (e.g., clinic records, testing registers):
-  - Tracked continuously or at least more frequently.
-  - Capture numbers of **new HIV diagnoses**, **ART initiations**, or **people currently on ART**.
-
-- **Rationale**: **Combining** these data sources can yield **more robust** estimates and reduce uncertainty.
-
-:::
-
-## Key HIV indicators from programmatic data
-
-![](img/key_indicators_ad0.png){width="150%"}
-
-## Direct utilisation: Small Area Estimation (Eaton, 2021)
-
-![](img/prev-anc-prev.png){width="65%"}
-
-![](img/art-anc-art.png){width="65%"}
+![Eaton, JIAS, 2021](img/prev-anc-prev.png){width="65%"}
 
 ## Triangulating Programmatic HIV Data {.smaller}
 
-![](img/test-pos.png){width="100%"}
+![Allorant, 2025, JIAS Under Review](img/test-pos.png){width="100%"}
 
-::: non-incremental
+
+## Triangulating Programmatic HIV Data {.smaller}
+
+![Allorant, 2025, JIAS Under Review](img/prev-test.png){width="100%"}
+
+## Future work
+
+::: incremental
 
 - Developing automated layer on top of health information system
   * Offers practical tool for rapid analysis and review
-  
-:::
+  * **Funded by WHO grant**
 
+- Evaluating a pilot study in Nampula province to enhance linkage to care
+  * Community vs. facility-based distribution of HIV self-test kits
+  * **Funded by British Academy/Leverhulme Trust**
 
-## Triangulating Programmatic HIV Data {.smaller}
+- Integrating sampling techniques with programmatic data
+  * Spatial & Adaptive sampling
+  * **Funding Plan**: Wellcome Trust Early-Career Award
 
-![](img/prev-test.png){width="100%"}
-
-::: non-incremental
-
-- Funded by WHO and British Academy/Leverhulme Trust
-  * May 2025 - May 2026
-
-- **Future work**: integrating sampling techniques with programmatic data
-  * Spatial sampling
-  * Adaptive sampling
 :::
 
 
@@ -149,7 +151,8 @@ Building on my previous research and work experiences in population health, soci
   * access to water/electricity 
 
 - **Key assumption**: whether households own an asset depends on their **latent** (unobserved) SES
-  * **Known limitation**, the "urban bias": certain assets are **publicly provided** in urban areas
+
+- Our research **hypothesis**: with mass consumption, asset ownership is **no longer** strongly dependent on SES 
 
 :::
 :::
@@ -162,66 +165,65 @@ Building on my previous research and work experiences in population health, soci
 :::
 :::
 
-. . .
-
-**Hypothesis**: with mass consumption, asset ownership is no longer strongly dependent on SES 
-
 ## The WI increasingly diverges from other metrics of SES (Consumption and Welfare) {.smaller}
 
 ### Egypt, Jordan, and Palestine
 
-::: columns
+- Low and decreasing **household-level** rank correlation
 
-::: {.column width="50%"}
+![Allorant & Youssif, 2025, PAA](img/capmas.png){width="80%"}
 
-- **Low and decreasing** household rank correlation
 
-![Allorant & Youssif, 2025, PAA](img/capmas.png)
+## The WI increasingly diverges from other metrics of SES (Consumption and Welfare) {.smaller}
 
-:::
+- Low and decreasing **area-level** rank correlation
 
-::: {.column width="50%"}
+![Allorant, Perfetti Villa, Hernandez, Tzavidis, ITACOSM, 2025](img/moz.png){width="80%"}
 
-### Mozambique
-
-- **Low** area-level rank correlation
-
-![Allorant, Perfetti Villa, Hernandez, Tzavidis, ITACOSM, 2025](img/moz.png)
-
-:::
-
-:::
-
-## An old idea with renewed importance
+## An old idea with renewed importance {.smaller}
 
 ![](img/meta.png){width="100%"}
 
+. . .
+
+### Future Work
+
+**Systematic comparison of poverty maps with Meta**
+
+::: incremental
+- In countries with **Consumption & Welfare** surveys:
+  * Employ SAE to create poverty estimates at district-level
+  * Compare with population-aggregated estimates from Meta
+
+- **Funding Plan**: ESRC Secondary Data Analysis
+
+:::
 
 # Aim 3: Address key challenges in the future of demographic processes' measurement {background-color="#40666e"}
 
-## Measuring the Future: AI, Metascience, and the Reinvention of Official Statistics
+## Measuring the Future: AI, Metascience, and the Reinvention of Official Statistics {.smaller}
+
+. . .
 
 **Objective**: To understand how AI is reshaping official statistics production
+
+. . .
 
 **Key Definitions**:
 
 ::: incremental
 
--	Official Statistics: data and indicators produced by National Statistical Offices
+-	Official Statistics: data and indicators produced by National Statistical Offices (NSOs)
 
 -	AI and Machine Learning: Data-driven algorithms and predictive models that can automate or enhance statistical processes
 
--	STS (Science and Technology Studies): Interdisciplinary field that examines how science, technology, and society co-produce knowledge, norms, and institutions
+-	Metascience: Interdisciplinary field that examines how science, technology, and society co-produce knowledge, norms, and institutions
 
 :::
 
 . . .
 
-**Approach**: A comprehensive comparative ethnography of National Statistical Offices
-
-. . .
-
-**Aims**:
+**Aims**: A comprehensive comparative ethnography of NSOs to study
 
 (i)	Data and Quantification
 (ii)	Professions and Practices
@@ -229,32 +231,43 @@ Building on my previous research and work experiences in population health, soci
 
 . . .
 
-**Funding**: UKRI Metascience
+**Funding plan**: UKRI Metascience
 
 # Appendix
 
-## Appendix: SAE for facility surveys {#sae-facility}
+## Appendix: SAE for facility surveys {#sae-facility .smaller}
 
-. . .
 
-**Step 1**: Direct estimate of coverage of indicator $l$ in area $j$ at time $t$ from survey $s$ is the **weighted average** of coverage across health facilities $i$ in area $j$
+::: columns
+
+::: {.column width="50%"}
+
+![Two-step modelling](img/2-step.png){width="100%"}
+
+:::
+
+::: {.column width="50%"}
+
+**Step 1**: $\widehat{p_{jts}}$ is the **weighted estimator** of coverage across facilities $i$ in area $j$ at time $t$, derived from survey $s$:
 
 $$
 \begin{aligned}
-\widehat{p^{l}_{jts}} = \frac{\sum_{i \in S_j} w_{ijs} y^{l}_{ijs}}{\sum_{i \in S_j} w_{ijs}}
+\widehat{p_{jts}} = \frac{\sum_{i \in S_j} w_{ijs} y_{ijs}}{\sum_{i \in S_j} w_{ijs}}
 \end{aligned}
 $$
+**Step 2**: Define $\widehat{\theta_{jts}} = \text{logit}(p_{jts})$. 
 
-. . .
+- $\widehat{\theta_{jts}}$ is treated as the "data", and the sampling model is $\widehat{\theta_{jts}} \sim N(\widehat{\theta_{jts}, V_{jts}})$.
 
-**Step 2**: Area-level readiness direct estimates modelled as a function of space-time covariates, and survey effects:
+- $\theta_{jts}$ is modelled as a function of space-time covariates, and survey effects:
 
 $$
 \begin{aligned}
- \theta^{l}_{jts} & = \alpha + \underbrace{X_{jt}}_{\text{Covariates}} \boldsymbol{\beta} + \overbrace{e_j + S_j}^{\text{Spatial effects}} +\\
- & \overbrace{\tau_t + \gamma_t}^{\text{Temporal effects}} + \overbrace{\delta_{jt}}^{\text{Space-time interaction}} + \overbrace{\nu_s}^{\text{Survey effect}}
+ \theta^{l}_{jts} & = \alpha + \boldsymbol{x_{j}}^T \beta + e_j + S_j + \tau_t + \gamma_t + \nu_s
 \end{aligned}
 $$
+:::
+:::
 
 ## Appendix: Allorant, 2023
 
@@ -278,7 +291,7 @@ $$
 $$
 \begin{aligned}
     Y(\mathbf{s}_i) &\sim \text{Ber}(p(\mathbf{s}_i))\\
-    \text{logit}^{-1}\left(p(\mathbf{s}_i)\right) &= \alpha  + \underbrace{\mathbf{X}(\mathbf{s}_i)\beta}_{\text{Spatial Covariates}} +  \overbrace{z_i \gamma}^{\text{Strata}} + \epsilon_{i} + S(s_i)
+    \text{logit}^{-1}\left(p(\mathbf{s}_i)\right) &= \alpha  + \mathbf{x}(\mathbf{s}_i)\beta +  z_i \gamma + \epsilon_{i} + S(s_i)
 \end{aligned}
 $$
 where:

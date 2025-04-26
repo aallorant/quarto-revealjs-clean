@@ -342,12 +342,14 @@ Adrien Allorant
 </section>
 <section id="proposed-research-program" class="title-slide slide level1 center" data-background-color="#40666e">
 <h1>Proposed Research Program</h1>
-<p>Building on my previous research and work experiences in population health, social statistics, and demography, my proposed research program is to:</p>
+<p>Building on my previous research in population health, social statistics, and demography, my proposed research program is to:</p>
+<div>
 <ol type="1">
-<li>Develop statistical methods to <strong>advance precision public health</strong></li>
-<li>Advance models and metrics to quantify <strong>health inequalities</strong></li>
-<li>Address key challenges in the <strong>measurement of demographic processes</strong></li>
+<li class="fragment">Develop statistical methods to <strong>advance precision public health</strong></li>
+<li class="fragment">Advance models and metrics to quantify <strong>health inequalities</strong></li>
+<li class="fragment">Address key challenges in the <strong>measurement of demographic processes</strong></li>
 </ol>
+</div>
 </section>
 
 <section>
@@ -357,99 +359,105 @@ Adrien Allorant
 </section>
 <section id="sec-aim1" class="slide level2 smaller">
 <h2>Subnational variations in healthcare quality</h2>
-<div class="fragment">
-<p><strong>Background</strong></p>
+<h3 id="previous-work">Previous work</h3>
 <div>
 <ul>
-<li class="fragment"><p>5 million of people die from poor‑quality care every year worldwide</p></li>
-<li class="fragment"><p>Variations in access to quality healthcare quality are ~ between and within countries</p></li>
-</ul>
-</div>
-</div>
-<div class="fragment">
-<p><strong>Health Facility Surveys</strong></p>
-<div>
+<li class="fragment"><strong>Background</strong>: 5 million of people die from poor‑quality care every year worldwide
 <ul>
-<li class="fragment"><p>In many low resource settings, routine health information systems are lacking or incomplete</p></li>
-<li class="fragment"><p>Information about access and quality of care comes from surveys</p></li>
-</ul>
-</div>
-</div>
-<div class="fragment">
-<p><strong>Modelling Facility Readiness</strong></p>
-<div>
-<ul>
-<li class="fragment"><p>Facility surveys can be inconsistent and are not powered to produce estimates at subnational level</p></li>
-<li class="fragment"><p>Hierarchical models can (i) account for differences between surveys using different design between, and (ii) use space-time correlation and covariates to produce estimates at subnational level</p></li>
-<li class="fragment"><p>I developed a spatio-temporal model using a <a href="#/sae-facility">two-step estimation process</a> (Allorant, 2023, <em>Nat. Comm.</em>)</p>
-<ul>
-<li class="fragment">IHME Health Systems team is implementing it for modelling ANC readiness in 6 countries</li>
+<li class="fragment">Variations in access to quality healthcare quality are ~ between and within countries</li>
 </ul></li>
+<li class="fragment"><strong>Health Facility Surveys</strong>: In low-resource settings, health information systems lacking or incomplete
+<ul>
+<li class="fragment">Information about access and quality of care comes from surveys</li>
+</ul></li>
+<li class="fragment"><strong>Modelling Facility Readiness</strong>: Facility surveys can be inconsistent and not powered to produce estimates at subnational level
+<ul>
+<li class="fragment">Hierarchical models (i) account for differences between designs, (ii) use space-time correlation and covariates to increase precision at subnational level</li>
+</ul></li>
+<li class="fragment">I developed a spatio-temporal model using a <a href="#/sae-facility">two-step estimation process</a> (Allorant, 2023, <em>Nat. Comm.</em>)</li>
 </ul>
 </div>
-</div>
-<div class="fragment">
-<p><strong>Future work</strong>: Developing a <a href="#/unit-level">unit-level model</a>, where quality metrics are modelled at the facility-level</p>
+<h3 id="future-work">Future work</h3>
+<div>
+<ul>
+<li class="fragment"><p>IHME Health Systems team is implementing it for modelling ANC readiness in 6 countries</p></li>
+<li class="fragment"><p>Developing a <a href="#/unit-level">unit-level model</a>, where quality metrics are modelled at the facility-level</p></li>
+</ul>
 </div>
 </section>
-<section id="optimizing-data-integration-to-enhance-hiv-care" class="slide level2">
-<h2>Optimizing Data Integration to Enhance HIV Care</h2>
+<section id="optimize-data-integration-enhance-hiv-care" class="slide level2 smaller">
+<h2>Optimize Data Integration &amp; Enhance HIV Care</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
 <div>
 <ul>
-<li class="fragment"><strong>Survey data</strong> (e.g., DHS, PHIA) provide snapshots of:
+<li class="fragment"><strong>Survey data</strong> provide snapshot of:
 <ul>
 <li class="fragment">HIV prevalence in a sampled population</li>
-<li class="fragment">ART coverage among those who test HIV-positive</li>
+<li class="fragment">ART coverage among HIV-positive</li>
 </ul></li>
 <li class="fragment"><strong>Challenges</strong>:
 <ul>
-<li class="fragment">Surveys are typically conducted every few years (infrequent).</li>
-<li class="fragment">Sample sizes may be small at sub-national level → <strong>higher uncertainty</strong> when disaggregating.</li>
-<li class="fragment">HIV Surveys (PHIA) were funded by USAID…</li>
+<li class="fragment">Surveys are typically conducted every few years</li>
+<li class="fragment">Sample sizes may be small at sub-national level</li>
+<li class="fragment">HIV Surveys (PHIA) were funded by USAID…terminated</li>
 </ul></li>
-<li class="fragment"><strong>Programmatic data</strong> (e.g., clinic records, testing registers):
+</ul>
+</div>
+</div><div class="column" style="width:40%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="img/key_indicators_ad0.png" style="width:150.0%"></p>
+<figcaption>Allorant, 2025, JIAS Under Review</figcaption>
+</figure>
+</div>
+<div>
 <ul>
-<li class="fragment">Tracked continuously or at least more frequently.</li>
-<li class="fragment">Capture numbers of <strong>new HIV diagnoses</strong>, <strong>ART initiations</strong>, or <strong>people currently on ART</strong>.</li>
+<li class="fragment"><strong>Programmatic data</strong>:
+<ul>
+<li class="fragment">Tracked continuously, aggregated quarterly</li>
+<li class="fragment">Capture numbers of <strong>new HIV diagnoses</strong>, <strong>people currently initiating/on treatment</strong></li>
 </ul></li>
-<li class="fragment"><strong>Rationale</strong>: <strong>Combining</strong> these data sources can yield <strong>more robust</strong> estimates and reduce uncertainty.</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="fragment">
+<ul>
+<li><strong>Rationale</strong>: <strong>Combining</strong> these data sources can yield <strong>more robust</strong> estimates and reduce uncertainty</li>
 </ul>
 </div>
 </section>
-<section id="key-hiv-indicators-from-programmatic-data" class="slide level2">
-<h2>Key HIV indicators from programmatic data</h2>
+<section id="small-area-estimation-models" class="slide level2">
+<h2>Small Area Estimation Models</h2>
 
-<img data-src="img/key_indicators_ad0.png" style="width:150.0%" class="r-stretch"></section>
-<section id="direct-utilisation-small-area-estimation-eaton-2021" class="slide level2">
-<h2>Direct utilisation: Small Area Estimation (Eaton, 2021)</h2>
-<p><img data-src="img/prev-anc-prev.png" style="width:65.0%"></p>
-<p><img data-src="img/art-anc-art.png" style="width:65.0%"></p>
-</section>
+<img data-src="img/prev-anc-prev.png" style="width:65.0%" class="r-stretch quarto-figure-center"><p class="caption">Eaton, JIAS, 2021</p></section>
 <section id="triangulating-programmatic-hiv-data" class="slide level2 smaller">
 <h2>Triangulating Programmatic HIV Data</h2>
 
-<img data-src="img/test-pos.png" style="width:100.0%" class="r-stretch"><div class="non-incremental">
-<ul>
-<li>Developing automated layer on top of health information system
-<ul>
-<li>Offers practical tool for rapid analysis and review</li>
-</ul></li>
-</ul>
-</div>
-</section>
+<img data-src="img/test-pos.png" style="width:100.0%" class="r-stretch quarto-figure-center"><p class="caption">Allorant, 2025, JIAS Under Review</p></section>
 <section id="triangulating-programmatic-hiv-data-1" class="slide level2 smaller">
 <h2>Triangulating Programmatic HIV Data</h2>
 
-<img data-src="img/prev-test.png" style="width:100.0%" class="r-stretch"><div class="non-incremental">
+<img data-src="img/prev-test.png" style="width:100.0%" class="r-stretch quarto-figure-center"><p class="caption">Allorant, 2025, JIAS Under Review</p></section>
+<section id="future-work-1" class="slide level2">
+<h2>Future work</h2>
+<div>
 <ul>
-<li>Funded by WHO and British Academy/Leverhulme Trust
+<li class="fragment">Developing automated layer on top of health information system
 <ul>
-<li>May 2025 - May 2026</li>
+<li class="fragment">Offers practical tool for rapid analysis and review</li>
+<li class="fragment"><strong>Funded by WHO grant</strong></li>
 </ul></li>
-<li><strong>Future work</strong>: integrating sampling techniques with programmatic data
+<li class="fragment">Evaluating a pilot study in Nampula province to enhance linkage to care
 <ul>
-<li>Spatial sampling</li>
-<li>Adaptive sampling</li>
+<li class="fragment">Community vs.&nbsp;facility-based distribution of HIV self-test kits</li>
+<li class="fragment"><strong>Funded by British Academy/Leverhulme Trust</strong></li>
+</ul></li>
+<li class="fragment">Integrating sampling techniques with programmatic data
+<ul>
+<li class="fragment">Spatial &amp; Adaptive sampling</li>
+<li class="fragment"><strong>Funding Plan</strong>: Wellcome Trust Early-Career Award</li>
 </ul></li>
 </ul>
 </div>
@@ -479,16 +487,14 @@ Adrien Allorant
 <div class="column" style="width:60%;">
 <div>
 <ul>
-<li class="fragment"><strong>Solution</strong>: a measure of SES (Filmer, Pritchett, 2001) derived from asset data routinely collected in surveys:
+<li class="fragment"><p><strong>Solution</strong>: a measure of SES (Filmer, Pritchett, 2001) derived from asset data routinely collected in surveys:</p>
 <ul>
 <li class="fragment">asset ownership (TV, car, radio)</li>
 <li class="fragment">housing characteristic</li>
 <li class="fragment">access to water/electricity</li>
 </ul></li>
-<li class="fragment"><strong>Key assumption</strong>: whether households own an asset depends on their <strong>latent</strong> (unobserved) SES
-<ul>
-<li class="fragment"><strong>Known limitation</strong>, the “urban bias”: certain assets are <strong>publicly provided</strong> in urban areas</li>
-</ul></li>
+<li class="fragment"><p><strong>Key assumption</strong>: whether households own an asset depends on their <strong>latent</strong> (unobserved) SES</p></li>
+<li class="fragment"><p>Our research <strong>hypothesis</strong>: with mass consumption, asset ownership is <strong>no longer</strong> strongly dependent on SES</p></li>
 </ul>
 </div>
 </div><div class="column" style="width:40%;">
@@ -496,63 +502,62 @@ Adrien Allorant
 </div>
 </div>
 </div>
-<div class="fragment">
-<p><strong>Hypothesis</strong>: with mass consumption, asset ownership is no longer strongly dependent on SES</p>
-</div>
 </section>
 <section id="the-wi-increasingly-diverges-from-other-metrics-of-ses-consumption-and-welfare" class="slide level2 smaller">
 <h2>The WI increasingly diverges from other metrics of SES (Consumption and Welfare)</h2>
 <h3 id="egypt-jordan-and-palestine">Egypt, Jordan, and Palestine</h3>
-<div class="columns">
-<div class="column" style="width:50%;">
 <ul>
-<li><strong>Low and decreasing</strong> household rank correlation</li>
+<li>Low and decreasing <strong>household-level</strong> rank correlation</li>
 </ul>
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="img/capmas.png"></p>
-<figcaption>Allorant &amp; Youssif, 2025, PAA</figcaption>
-</figure>
-</div>
-</div><div class="column" style="width:50%;">
-<h3 id="mozambique">Mozambique</h3>
+
+<img data-src="img/capmas.png" style="width:80.0%" class="r-stretch quarto-figure-center"><p class="caption">Allorant &amp; Youssif, 2025, PAA</p></section>
+<section id="the-wi-increasingly-diverges-from-other-metrics-of-ses-consumption-and-welfare-1" class="slide level2 smaller">
+<h2>The WI increasingly diverges from other metrics of SES (Consumption and Welfare)</h2>
 <ul>
-<li><strong>Low</strong> area-level rank correlation</li>
+<li>Low and decreasing <strong>area-level</strong> rank correlation</li>
 </ul>
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="img/moz.png"></p>
-<figcaption>Allorant, Perfetti Villa, Hernandez, Tzavidis, ITACOSM, 2025</figcaption>
-</figure>
-</div>
-</div>
-</div>
-</section>
-<section id="an-old-idea-with-renewed-importance" class="slide level2">
+
+<img data-src="img/moz.png" style="width:80.0%" class="r-stretch quarto-figure-center"><p class="caption">Allorant, Perfetti Villa, Hernandez, Tzavidis, ITACOSM, 2025</p></section>
+<section id="an-old-idea-with-renewed-importance" class="slide level2 smaller">
 <h2>An old idea with renewed importance</h2>
 
-<img data-src="img/meta.png" style="width:100.0%" class="r-stretch"></section></section>
+<img data-src="img/meta.png" style="width:100.0%" class="r-stretch"><div class="fragment">
+<h3 id="future-work-2">Future Work</h3>
+<p><strong>Systematic comparison of poverty maps with Meta</strong></p>
+<div>
+<ul>
+<li class="fragment">In countries with <strong>Consumption &amp; Welfare</strong> surveys:
+<ul>
+<li class="fragment">Employ SAE to create poverty estimates at district-level</li>
+<li class="fragment">Compare with population-aggregated estimates from Meta</li>
+</ul></li>
+<li class="fragment"><strong>Funding Plan</strong>: ESRC Secondary Data Analysis</li>
+</ul>
+</div>
+</div>
+</section></section>
 <section>
 <section id="aim-3-address-key-challenges-in-the-future-of-demographic-processes-measurement" class="title-slide slide level1 center" data-background-color="#40666e">
 <h1>Aim 3: Address key challenges in the future of demographic processes’ measurement</h1>
 
 </section>
-<section id="measuring-the-future-ai-metascience-and-the-reinvention-of-official-statistics" class="slide level2">
+<section id="measuring-the-future-ai-metascience-and-the-reinvention-of-official-statistics" class="slide level2 smaller">
 <h2>Measuring the Future: AI, Metascience, and the Reinvention of Official Statistics</h2>
+<div class="fragment">
 <p><strong>Objective</strong>: To understand how AI is reshaping official statistics production</p>
+</div>
+<div class="fragment">
 <p><strong>Key Definitions</strong>:</p>
 <div>
 <ul>
-<li class="fragment"><p>Official Statistics: data and indicators produced by National Statistical Offices</p></li>
+<li class="fragment"><p>Official Statistics: data and indicators produced by National Statistical Offices (NSOs)</p></li>
 <li class="fragment"><p>AI and Machine Learning: Data-driven algorithms and predictive models that can automate or enhance statistical processes</p></li>
-<li class="fragment"><p>STS (Science and Technology Studies): Interdisciplinary field that examines how science, technology, and society co-produce knowledge, norms, and institutions</p></li>
+<li class="fragment"><p>Metascience: Interdisciplinary field that examines how science, technology, and society co-produce knowledge, norms, and institutions</p></li>
 </ul>
 </div>
-<div class="fragment">
-<p><strong>Approach</strong>: A comprehensive comparative ethnography of National Statistical Offices</p>
 </div>
 <div class="fragment">
-<p><strong>Aims</strong>:</p>
+<p><strong>Aims</strong>: A comprehensive comparative ethnography of NSOs to study</p>
 <ol type="i">
 <li>Data and Quantification</li>
 <li>Professions and Practices</li>
@@ -560,7 +565,7 @@ Adrien Allorant
 </ol>
 </div>
 <div class="fragment">
-<p><strong>Funding</strong>: UKRI Metascience</p>
+<p><strong>Funding plan</strong>: UKRI Metascience</p>
 </div>
 </section></section>
 <section>
@@ -568,24 +573,33 @@ Adrien Allorant
 <h1>Appendix</h1>
 
 </section>
-<section id="sae-facility" class="slide level2">
+<section id="sae-facility" class="slide level2 smaller">
 <h2>Appendix: SAE for facility surveys</h2>
-<div class="fragment">
-<p><strong>Step 1</strong>: Direct estimate of coverage of indicator <span class="math inline">\(l\)</span> in area <span class="math inline">\(j\)</span> at time <span class="math inline">\(t\)</span> from survey <span class="math inline">\(s\)</span> is the <strong>weighted average</strong> of coverage across health facilities <span class="math inline">\(i\)</span> in area <span class="math inline">\(j\)</span></p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="img/2-step.png" style="width:100.0%"></p>
+<figcaption>Two-step modelling</figcaption>
+</figure>
+</div>
+</div><div class="column" style="width:50%;">
+<p><strong>Step 1</strong>: <span class="math inline">\(\widehat{p_{jts}}\)</span> is the <strong>weighted estimator</strong> of coverage across facilities <span class="math inline">\(i\)</span> in area <span class="math inline">\(j\)</span> at time <span class="math inline">\(t\)</span>, derived from survey <span class="math inline">\(s\)</span>:</p>
 <p><span class="math display">\[
 \begin{aligned}
-\widehat{p^{l}_{jts}} = \frac{\sum_{i \in S_j} w_{ijs} y^{l}_{ijs}}{\sum_{i \in S_j} w_{ijs}}
+\widehat{p_{jts}} = \frac{\sum_{i \in S_j} w_{ijs} y_{ijs}}{\sum_{i \in S_j} w_{ijs}}
+\end{aligned}
+\]</span> <strong>Step 2</strong>: Define <span class="math inline">\(\widehat{\theta_{jts}} = \text{logit}(p_{jts})\)</span>.</p>
+<ul>
+<li><p><span class="math inline">\(\widehat{\theta_{jts}}\)</span> is treated as the “data”, and the sampling model is <span class="math inline">\(\widehat{\theta_{jts}} \sim N(\widehat{\theta_{jts}, V_{jts}})\)</span>.</p></li>
+<li><p><span class="math inline">\(\theta_{jts}\)</span> is modelled as a function of space-time covariates, and survey effects:</p></li>
+</ul>
+<p><span class="math display">\[
+\begin{aligned}
+\theta^{l}_{jts} &amp; = \alpha + \boldsymbol{x_{j}}^T \beta + e_j + S_j + \tau_t + \gamma_t + \nu_s
 \end{aligned}
 \]</span></p>
 </div>
-<div class="fragment">
-<p><strong>Step 2</strong>: Area-level readiness direct estimates modelled as a function of space-time covariates, and survey effects:</p>
-<p><span class="math display">\[
-\begin{aligned}
-\theta^{l}_{jts} &amp; = \alpha + \underbrace{X_{jt}}_{\text{Covariates}} \boldsymbol{\beta} + \overbrace{e_j + S_j}^{\text{Spatial effects}} +\\
-&amp; \overbrace{\tau_t + \gamma_t}^{\text{Temporal effects}} + \overbrace{\delta_{jt}}^{\text{Space-time interaction}} + \overbrace{\nu_s}^{\text{Survey effect}}
-\end{aligned}
-\]</span></p>
 </div>
 </section>
 <section id="appendix-allorant-2023" class="slide level2">
@@ -605,7 +619,7 @@ Adrien Allorant
 <p><span class="math display">\[
 \begin{aligned}
     Y(\mathbf{s}_i) &amp;\sim \text{Ber}(p(\mathbf{s}_i))\\
-    \text{logit}^{-1}\left(p(\mathbf{s}_i)\right) &amp;= \alpha  + \underbrace{\mathbf{X}(\mathbf{s}_i)\beta}_{\text{Spatial Covariates}} +  \overbrace{z_i \gamma}^{\text{Strata}} + \epsilon_{i} + S(s_i)
+    \text{logit}^{-1}\left(p(\mathbf{s}_i)\right) &amp;= \alpha  + \mathbf{x}(\mathbf{s}_i)\beta +  z_i \gamma + \epsilon_{i} + S(s_i)
 \end{aligned}
 \]</span> where:</p>
 <div>
