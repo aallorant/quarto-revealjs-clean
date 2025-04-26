@@ -1,0 +1,294 @@
+---
+title: Advancing the science of health inequality measurement
+subtitle: Research Agenda for the next 3-5 years
+format: clean-revealjs
+html-math-method:
+  method: mathjax
+url: "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+author:
+  - name: Adrien Allorant
+email: adrien.allorant@soton.ac.uk
+affiliations: University of Southampton
+date: 04/30/2025
+---
+
+# Proposed Research Program {background-color="#40666e"}
+
+Building on my previous research and work experiences in population health, social statistics, and demography, my proposed research program is to:
+
+1. Develop statistical methods to **advance precision public health**
+2. Advance models and metrics to quantify **health inequalities**
+3. Address key challenges in the **measurement of demographic processes**
+
+# **Aim 1**: Statistical Methods for Precision Public Health  {background-color="#40666e"}
+
+## Subnational variations in healthcare quality {#sec-aim1 .smaller}
+
+. . .
+
+**Background**
+
+::: incremental
+
+- 5 million of people die from poor‑quality care every year worldwide
+
+- Variations in access to quality healthcare quality are ~ between and within countries
+:::
+
+. . .
+
+**Health Facility Surveys**
+  
+::: incremental
+
+- In many low resource settings, routine health information systems are lacking or incomplete
+
+- Information about access and quality of care comes from surveys
+
+:::
+
+. . .
+
+**Modelling Facility Readiness**
+
+::: incremental
+
+- Facility surveys can be inconsistent and are not powered to produce estimates at subnational level
+- Hierarchical models can (i) account for differences between surveys using different design between, and (ii) use space-time correlation and covariates to produce estimates at subnational level
+
+- I developed a spatio-temporal model using a [two-step estimation process](#sae-facility) (Allorant, 2023, *Nat. Comm.*)
+  * IHME Health Systems team is implementing it for modelling ANC readiness in 6 countries
+
+:::
+
+. . .
+
+**Future work**: Developing a [unit-level model](#unit-level), where quality metrics are modelled at the facility-level
+
+## Optimizing Data Integration to Enhance HIV Care
+
+::: incremental
+
+- **Survey data** (e.g., DHS, PHIA) provide snapshots of:
+  - HIV prevalence in a sampled population
+  - ART coverage among those who test HIV-positive
+- **Challenges**:
+  - Surveys are typically conducted every few years (infrequent).
+  - Sample sizes may be small at sub-national level → **higher uncertainty** when disaggregating.
+  - HIV Surveys (PHIA) were funded by USAID...
+
+- **Programmatic data** (e.g., clinic records, testing registers):
+  - Tracked continuously or at least more frequently.
+  - Capture numbers of **new HIV diagnoses**, **ART initiations**, or **people currently on ART**.
+
+- **Rationale**: **Combining** these data sources can yield **more robust** estimates and reduce uncertainty.
+
+:::
+
+## Key HIV indicators from programmatic data
+
+![](img/key_indicators_ad0.png){width="150%"}
+
+## Direct utilisation: Small Area Estimation (Eaton, 2021)
+
+![](img/prev-anc-prev.png){width="65%"}
+
+![](img/art-anc-art.png){width="65%"}
+
+## Triangulating Programmatic HIV Data {.smaller}
+
+![](img/test-pos.png){width="100%"}
+
+::: non-incremental
+
+- Developing automated layer on top of health information system
+  * Offers practical tool for rapid analysis and review
+  
+:::
+
+
+## Triangulating Programmatic HIV Data {.smaller}
+
+![](img/prev-test.png){width="100%"}
+
+::: non-incremental
+
+- Funded by WHO and British Academy/Leverhulme Trust
+  * May 2025 - May 2026
+
+- **Future work**: integrating sampling techniques with programmatic data
+  * Spatial sampling
+  * Adaptive sampling
+:::
+
+
+# Aim 2: Advance models and metrics to quantify health inequalities  {background-color="#40666e"}
+
+## Re-assessing the Wealth Index (WI) as a Measure of socio-economic status {.smaller}
+
+::: incremental
+
+- **Rationale**:
+  * Most households surveys collect information on health and demographic indicators (HDI)
+  * But not on income or consumption expenditures
+- **Challenges**:
+  - To assess inequalities in HDI, one needs a measure of socio-economic status (SES)
+
+:::
+
+. . .
+
+::: columns
+::: {.column width="60%"}
+
+::: incremental
+
+- **Solution**: a measure of SES (Filmer, Pritchett, 2001) derived from asset data routinely collected in surveys: 
+  * asset ownership (TV, car, radio)
+  * housing characteristic
+  * access to water/electricity 
+
+- **Key assumption**: whether households own an asset depends on their **latent** (unobserved) SES
+  * **Known limitation**, the "urban bias": certain assets are **publicly provided** in urban areas
+
+:::
+:::
+
+
+::: {.column width="40%"}
+
+![](img/wealth-index.png){width="100%"}
+
+:::
+:::
+
+. . .
+
+**Hypothesis**: with mass consumption, asset ownership is no longer strongly dependent on SES 
+
+## The WI increasingly diverges from other metrics of SES (Consumption and Welfare) {.smaller}
+
+### Egypt, Jordan, and Palestine
+
+::: columns
+
+::: {.column width="50%"}
+
+- **Low and decreasing** household rank correlation
+
+![Allorant & Youssif, 2025, PAA](img/capmas.png)
+
+:::
+
+::: {.column width="50%"}
+
+### Mozambique
+
+- **Low** area-level rank correlation
+
+![Allorant, Perfetti Villa, Hernandez, Tzavidis, ITACOSM, 2025](img/moz.png)
+
+:::
+
+:::
+
+## An old idea with renewed importance
+
+![](img/meta.png){width="100%"}
+
+
+# Aim 3: Address key challenges in the future of demographic processes' measurement {background-color="#40666e"}
+
+## Measuring the Future: AI, Metascience, and the Reinvention of Official Statistics
+
+**Objective**: To understand how AI is reshaping official statistics production
+
+**Key Definitions**:
+
+::: incremental
+
+-	Official Statistics: data and indicators produced by National Statistical Offices
+
+-	AI and Machine Learning: Data-driven algorithms and predictive models that can automate or enhance statistical processes
+
+-	STS (Science and Technology Studies): Interdisciplinary field that examines how science, technology, and society co-produce knowledge, norms, and institutions
+
+:::
+
+. . .
+
+**Approach**: A comprehensive comparative ethnography of National Statistical Offices
+
+. . .
+
+**Aims**:
+
+(i)	Data and Quantification
+(ii)	Professions and Practices
+(iii)	Public Value and Accessibility
+
+. . .
+
+**Funding**: UKRI Metascience
+
+# Appendix
+
+## Appendix: SAE for facility surveys {#sae-facility}
+
+. . .
+
+**Step 1**: Direct estimate of coverage of indicator $l$ in area $j$ at time $t$ from survey $s$ is the **weighted average** of coverage across health facilities $i$ in area $j$
+
+$$
+\begin{aligned}
+\widehat{p^{l}_{jts}} = \frac{\sum_{i \in S_j} w_{ijs} y^{l}_{ijs}}{\sum_{i \in S_j} w_{ijs}}
+\end{aligned}
+$$
+
+. . .
+
+**Step 2**: Area-level readiness direct estimates modelled as a function of space-time covariates, and survey effects:
+
+$$
+\begin{aligned}
+ \theta^{l}_{jts} & = \alpha + \underbrace{X_{jt}}_{\text{Covariates}} \boldsymbol{\beta} + \overbrace{e_j + S_j}^{\text{Spatial effects}} +\\
+ & \overbrace{\tau_t + \gamma_t}^{\text{Temporal effects}} + \overbrace{\delta_{jt}}^{\text{Space-time interaction}} + \overbrace{\nu_s}^{\text{Survey effect}}
+\end{aligned}
+$$
+
+## Appendix: Allorant, 2023
+
+
+![Department-level survey and model estimates for process quality metrics](img/survey-model-estimates.png){width="110%"}
+
+[Back](#sec-aim1)
+
+## Appendix: Unit-level model for facility surveys {#unit-level .smaller}
+
+::: incremental
+
+- Complex survey design acknowledged by including strata as covariates
+
+- Stronger spatial correlation may exist at smaller spatial scales
+
+:::
+
+. . .
+
+$$
+\begin{aligned}
+    Y(\mathbf{s}_i) &\sim \text{Ber}(p(\mathbf{s}_i))\\
+    \text{logit}^{-1}\left(p(\mathbf{s}_i)\right) &= \alpha  + \underbrace{\mathbf{X}(\mathbf{s}_i)\beta}_{\text{Spatial Covariates}} +  \overbrace{z_i \gamma}^{\text{Strata}} + \epsilon_{i} + S(s_i)
+\end{aligned}
+$$
+where:
+
+::: nonincremental
+
+- $z_i$ is the strata of facility $i$ (facility type x managing authority x region), and $\exp(\gamma)$ is the associated odds ration;
+- $\epsilon_{i} \sim N(0,\sigma^2_{\epsilon})$ is an i.i.d facility-level error term
+- $S(s_i)$ is a spatial Gaussian Process
+
+:::
+
+[Back](#sec-aim1)

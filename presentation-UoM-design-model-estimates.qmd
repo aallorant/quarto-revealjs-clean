@@ -354,6 +354,27 @@ $$
 
 # Appendix
 
+## Appendix: Sampling theory - key terminology {#sec-terminology}
+
+::: incremental
+
+- A sample is **representative** when each sampled unit represents the characteristics of a **known** number of units in the population
+
+- *Selection bias* occurs when some parts of the target population $\notin$ sampled
+
+- **Observation unit**: an element on which a measurement is taken (e.g., health facilities)
+
+- **Target population**: *complete* collection of observations studied (e.g., health facilities or providers)
+- **Sample**: a subset of the population (of size $n$)
+
+- **Sampled population**: collection of all *possible* observation units, i.e., the population from which the sample was taken (of size $N$)
+
+- **Sampling unit**: the unit actually sampled (e.g., health facilities vs health providers)
+
+- **Sampling frame**: list of sampling units
+
+:::
+
 ## Appendix: Types of probability samples {#prob-sample .smaller} 
 
 ::: incremental
